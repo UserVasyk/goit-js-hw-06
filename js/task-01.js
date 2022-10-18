@@ -10,7 +10,7 @@ console.log('Number of categories:', numbersOfCategories.length);
 categoriesOfLinks.querySelectorAll('.item').forEach(element => {
     console.log('Category:', element.firstElementChild.textContent);
     console.log('Elements:', element.lastElementChild.children.length);
-    
+    return;
 });
 
 
