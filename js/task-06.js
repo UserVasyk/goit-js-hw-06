@@ -13,11 +13,11 @@ function onInputCheck(event) {
       
               
      inputEl.classList.add('invalid'); 
-     inputEl.classList.replace('valid', 'invalid'); 
+     inputEl.classList.remove('valid'); 
 
     } else {
 
      inputEl.classList.add('valid');
-     inputEl.classList.replace('invalid', 'valid');
+     inputEl.classList.remove('invalid');
     }
 }
