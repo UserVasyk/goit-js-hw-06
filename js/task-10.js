@@ -7,7 +7,7 @@ const destroyBtn = document.querySelector('[data-destroy]');
 const inputEl = document.querySelector('#controls > input');
 const boxeEl = document.querySelector('#boxes');
 
-console.log(boxeEl.previousSibling)
+
 let totalInputNumber = 0;
 
 createBtn.addEventListener('click', createBoxes)
@@ -16,39 +16,29 @@ destroyBtn.addEventListener('click', destroyBoxes)
 
 function onInputNumber(event) {
   totalInputNumber = event.currentTarget.value;
-  
 
-  
 }
+
 function createBoxes(amount){
   amount = totalInputNumber;
-  console.log(amount);
  
   for (let i = 1; i <= amount; i += 1) {
-     let total = 0;
-  if (!boxeEl.firstChild) {
-      total = 0;
-      console.log('fisrt')
-  }
-  else {
-  total += i * 10;
-  console.log('gdd')
-    }
+    
+    const total = 30 + (boxeEl.children.length) * 10;
+    
 
-    console.log(total);
 
     const markup = document.createElement('div');
 
     markup.style.backgroundColor = getRandomHexColor(); 
-    
-
-markup.style.width = `${30 + total}px`;
-    markup.style.height = `${total + 30}px`;
-    boxeEl.append( markup);
+   
+    markup.style.width = `${total}px`;
+    markup.style.height = `${total}px`;
+    boxeEl.append(markup);
+  
   }
 
 }
-
 function destroyBoxes() {
   boxeEl.querySelectorAll('div').forEach(element => element.remove())
 }
